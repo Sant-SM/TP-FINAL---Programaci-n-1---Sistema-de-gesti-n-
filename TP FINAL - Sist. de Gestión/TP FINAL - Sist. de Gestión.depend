@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1781181183 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
+1781182271 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"pedirArtistas.h"
+	"artistas.h"
 	"escenario.h"
 	"presentacion.h"
 	"tiempo.h"
@@ -35,7 +35,7 @@
 	<string.h>
 	"tiempo.h"
 
-1781180917 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
+1781182118 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
 
 1781181383 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
 	<stdio.h>
@@ -43,4 +43,10 @@
 	<string.h>
 	"presentacion.h"
 	"tiempo.h"
+
+1781184428 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"artistas.h"
 

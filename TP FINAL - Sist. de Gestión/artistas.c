@@ -23,3 +23,4 @@ dato.genero[strcspn(dato.genero, "\n")] = '\0';
     return dato;
 
 }
+

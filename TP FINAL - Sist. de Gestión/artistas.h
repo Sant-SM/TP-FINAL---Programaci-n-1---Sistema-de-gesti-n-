@@ -9,4 +9,6 @@ char genero[30];
 
 } stArtista;
 
+stArtista pedirArtistas ();
+
 #endif // ARTISTAS_H_INCLUDED

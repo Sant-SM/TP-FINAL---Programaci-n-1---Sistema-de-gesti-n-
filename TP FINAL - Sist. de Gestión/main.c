@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "pedirArtistas.h"
+#include "artistas.h"
 #include "escenario.h"
 #include "presentacion.h"
 #include "tiempo.h"
@@ -9,6 +9,9 @@
 //======================================================================/LLAMADO DE FUNCIONES/
 
 void cargarArtista(stArtista artista [], int validos);
+
+
+
 
 ///=========================================================================/MAIN/
 
@@ -25,8 +28,6 @@ int main()
 //=========================================================================/FUNCIONES/
 
 //nombre[strcspn(nombre, "\n")] = '\0';                   BORRA SALTO DE LINEA
-
-stArtista pedirArtistas();
 
 //====================================================/CARGAS/
 
@@ -45,7 +46,25 @@ void cargarArtista (stArtista artista[], int validos) {
     }
 }
 
+stArtista existeArtista (stArtista artista[], int validos, int j, int flag){
 
+    for (int i = 0; i < validos; i++){
+
+    if (artista[j].id == artista[i].id || artista[j].nombre == artista[i].nombre){
+
+        printf ("\nEse artista ya existe! Ingrese de nuevo los datos del artista");
+        flag = 1;
+
+
+    }else {
+
+        flag = 0;
+
+    }
+
+    }
+
+}
 
 
 
