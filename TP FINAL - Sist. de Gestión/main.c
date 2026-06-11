@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 //======================================================================/ESTRUCTURAS/
 
@@ -51,6 +52,16 @@ char nombre[50];
 } stEscenario;
 
 
+//======================================================================/LLAMADO DE FUNCIONES/
+
+stArtista pedirArtistas ();
+stEscenario pedirEscenario();
+stPresentacion pedirPresentacion();
+stHorario crearHorario (int h, int m);
+stHorario pedirHorario ();
+stDuracion crearDuracion (int h, int m);
+stDuracion pedirDuracion();
+
 ///=========================================================================/MAIN/
 
 int main()
@@ -65,20 +76,24 @@ int main()
 
 //=========================================================================/FUNCIONES/
 
-/*CARGAS*/
+//====================================================/CARGAS INDIVIDUALES/
 
-stArtista cargaARTS (){
+stArtista pedirArtistas (){
 
     stArtista dato;
 
 printf ("Ingrese el ID del artista: ");
 scanf ("%i", &dato.id);
 
+getchar();
+
 printf ("Ingrese el Nombre del artista: ");
 fgets(dato.nombre, 50, stdin);
+dato.nombre[strcspn(dato.nombre, "\n")] = '\0';
 
 printf ("Ingrese el Genero del artista: ");
 fgets(dato.genero, 30, stdin);
+dato.genero[strcspn(dato.genero, "\n")] = '\0';
 
     return dato;
 
@@ -86,21 +101,24 @@ fgets(dato.genero, 30, stdin);
 
 //nombre[strcspn(nombre, "\n")] = '\0';                   BORRA SALTO DE LINEA
 
-stEscenario cargaESC(){
+stEscenario pedirEscenario(){
 
     stEscenario dato;
 
 printf ("Ingrese ID del escenario: ");
 scanf ("%i", &dato.id);
 
+getchar();
+
 printf ("Ingrese Nombre del escenario: ");
 fgets(dato.nombre, 50, stdin);
+dato.nombre[strcspn(dato.nombre, "\n")] = '\0';
 
     return dato;
 
 }
 
-stPresentacion cargaPRES(){
+stPresentacion pedirPresentacion(){
 
     stPresentacion dato;
 
@@ -115,14 +133,45 @@ scanf ("%i", &dato.idEscenario);
 
     //CARGA DE HORARIOS
 
-cargaHORARIO();
-cargaDUR();
+    do{
+
+    dato.horaInicio = pedirHorario();
+
+}while(dato.horaInicio.esValido == 0);
+
+do{
+
+    dato.duracion = pedirDuracion();
+
+}while(dato.duracion.esValido == 0);
 
     return dato;
 
 }
 
-stHorario cargaHORARIO (){
+stHorario crearHoriario (int h, int m){
+
+    stHorario dato;
+
+    dato.horas = h;
+    dato.minutos = m;
+
+    if (h >= 0 && m >= 0 && h <= 23 && m <= 59){
+
+        dato.esValido = 1;
+
+    }else {
+
+        dato.esValido = 0;
+
+    }
+
+    return dato;
+
+}
+
+
+stHorario pedirHorario (){
 
     stHorario dato;
 
@@ -132,21 +181,32 @@ scanf("%i", &dato.horas);
 printf ("MINUTOS: ");
 scanf("%i", &dato.minutos);
 
-    if (dato.horas <= 24 && dato.minutos <= 60){
+    return crearHoriario(dato.horas, dato.minutos);
 
-        dato.esValido == 1;
+}
+
+
+stDuracion crearDuracion (int h, int m){
+
+    stDuracion dato;
+
+    dato.horas = h;
+    dato.minutos = m;
+
+    if (h >= 0 && m >= 0 && m <= 59){
+
+        dato.esValido = 1;
 
     }else {
 
-        dato.esValido == 0;
+        dato.esValido = 0;
 
     }
 
     return dato;
-
 }
 
-stDuracion cargaDUR (){
+stDuracion pedirDuracion(){
 
     stDuracion dato;
 
@@ -156,15 +216,28 @@ scanf("%i", &dato.horas);
 printf ("MINUTOS: ");
 scanf("%i", &dato.minutos);
 
-
-    if (dato.minutos <= 60){
-
-        dato.esValido == 1;
-
-    }else {
-
-        dato.esValido == 0;
+    return crearDuracion(dato.horas, dato.minutos);
 
 }
+
+//====================================================/CARGAS GLOBALES/
+
+void cargarArtista (stArtista artista[], int validos) {
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 
 
