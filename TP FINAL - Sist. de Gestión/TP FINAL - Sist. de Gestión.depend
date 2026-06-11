@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1781182271 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
+1781209093 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -23,7 +23,7 @@
 
 1781181601 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.h
 
-1781180152 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
+1781207343 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -37,14 +37,14 @@
 
 1781182118 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
 
-1781181383 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
+1781207915 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"presentacion.h"
 	"tiempo.h"
 
-1781184428 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
+1781207343 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
