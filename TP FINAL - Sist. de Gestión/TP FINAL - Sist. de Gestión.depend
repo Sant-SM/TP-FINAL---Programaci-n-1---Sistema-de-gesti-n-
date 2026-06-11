@@ -1,6 +1,46 @@
 # depslib dependency file v1.0
-1781136611 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
+1781181183 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	"pedirArtistas.h"
+	"escenario.h"
+	"presentacion.h"
+	"tiempo.h"
+
+1781181053 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pedirartistas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"artistas.h"
+
+1781181526 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pedirartistas.h
+
+1781181512 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.h
+
+1781181546 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.h
+	"tiempo.h"
+
+1781181601 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.h
+
+1781180152 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"escenario.h"
+
+1781180435 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1781180917 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
+
+1781181383 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"presentacion.h"
+	"tiempo.h"
 
