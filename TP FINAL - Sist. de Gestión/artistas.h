@@ -10,5 +10,7 @@ char genero[30];
 } stArtista;
 
 stArtista pedirArtistas ();
+void cargarArtista(stArtista artista [], int * validos);
+int existeArtista (stArtista artista[], int validos, int id);
 
 #endif // ARTISTAS_H_INCLUDED

@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "tiempo.h"
+#include "constantes.h"
+#include "utilidades.h"
 
 stHorario crearHoriario (int h, int m){
 
@@ -29,10 +31,10 @@ stHorario pedirHorario (){
 
     stHorario dato;
 
-printf ("HORAS: ");
+printf ("\nHORAS: ");
 scanf("%i", &dato.horas);
 
-printf ("MINUTOS: ");
+printf ("\nMINUTOS: ");
 scanf("%i", &dato.minutos);
 
     return crearHoriario(dato.horas, dato.minutos);
@@ -64,12 +66,56 @@ stDuracion pedirDuracion(){
 
     stDuracion dato;
 
-printf ("HORAS: ");
+printf ("\nHORAS: ");
 scanf("%i", &dato.horas);
 
-printf ("MINUTOS: ");
+printf ("\nMINUTOS: ");
 scanf("%i", &dato.minutos);
 
     return crearDuracion(dato.horas, dato.minutos);
+
+}
+
+stHorario calcularFin (stHorario horarioINICIO, stDuracion horarioDURACION){
+
+    stHorario fin;
+
+    fin.horas = horarioINICIO.horas + horarioDURACION.horas;
+    fin.minutos = horarioINICIO.minutos + horarioDURACION.minutos;
+
+    while (fin.minutos >= 60){
+
+        fin.minutos -= 60;
+        fin.horas++;
+
+    }
+
+    fin.esValido = 1;
+    return fin;
+
+}
+
+int haySolapamiento(stHorario inicio1, stHorario fin1, stHorario inicio2, stHorario fin2){
+
+    int ini1 = horarioAMinutos(inicio1);
+    int finN1 = horarioAMinutos(fin1);
+
+    int ini2 = horarioAMinutos(inicio2);
+    int finN2 = horarioAMinutos(fin2);
+
+
+    if (finN1 <= ini2 || finN2 <= ini1){
+
+        return 0; //INDICA QUE NO HAY SOLAPAMIENTO
+
+    }
+
+    return 1;
+
+}
+
+int horarioAMinutos(stHorario h){           ///PARA SIMPLIFICAR FUNCION haySolapamiento
+
+    return h.horas * 60 + h.minutos;
 
 }

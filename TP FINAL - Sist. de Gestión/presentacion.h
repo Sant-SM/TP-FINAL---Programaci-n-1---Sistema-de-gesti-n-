@@ -14,5 +14,7 @@ stDuracion duracion;
 } stPresentacion;
 
 stPresentacion pedirPresentacion();
+void cargaPresentaciones (stPresentacion presentacion[], int * validosPRES, stArtista artista[], int validosARTS, stEscenario escenario[], int validosESC);
+int existePresentacion (stPresentacion presentacion[], int validos, int id);
 
 #endif // PRESENTACION_H_INCLUDED

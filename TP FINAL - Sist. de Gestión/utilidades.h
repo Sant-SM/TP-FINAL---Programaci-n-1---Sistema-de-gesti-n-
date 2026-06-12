@@ -1,0 +1,6 @@
+#ifndef UTILIDADES_H_INCLUDED
+#define UTILIDADES_H_INCLUDED
+
+int pedirEntero();
+
+#endif // UTILIDADES_H_INCLUDED
