@@ -65,7 +65,7 @@ stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenar
 
     if (existeEscenarioID(escenario, validosESC, dato.idEscenario) == 1){                   ///EL MENSAJE ESTA AL REVEZ, WTF???
 
-            printf ("\nEscenario encontrado");
+            printf ("\nEscenario encontrado\n");
 
         }else if (existeEscenarioID(escenario, validosESC, dato.idEscenario) == 0){
 
@@ -107,9 +107,9 @@ void cargaPresentaciones (stPresentacion presentacion[], int * validosPRES, stAr
 
         nuevo = pedirPresentacion(artista, validosARTS, escenario, validosESC);
 
-        while (existePresentacion(presentacion, *validosPRES, nuevo.id) == 1){
+        while (existePresentacion(presentacion, *validosPRES, nuevo.id) == 1 || existeSolapamientoPRES(presentacion, *validosPRES, nuevo) == 1){
 
-            printf ("\nError, esa presentacion ya existe, ingrese los datos nuevamente\n");
+            printf ("\nIngrese de nuevo la presentacion\n");
             nuevo = pedirPresentacion(artista, validosARTS, escenario, validosESC);
 
         }
@@ -137,6 +137,43 @@ int existePresentacion (stPresentacion presentacion[], int validos, int id){
 
             return 1;
         }
+    }
+
+    return 0;
+
+}
+
+
+int existeSolapamientoPRES(stPresentacion presentaciones[], int validos, stPresentacion nueva){
+
+    stHorario finNUEVA = calcularFin(nueva.horaInicio, nueva.duracion);
+
+    for (int i = 0; i < validos; i++){
+
+        stHorario finACTUAL = calcularFin(presentaciones[i].horaInicio, presentaciones[i].duracion);
+
+        if (presentaciones[i].idArtista == nueva.idArtista){
+
+            if (haySolapamiento(presentaciones[i].horaInicio, finACTUAL, nueva.horaInicio, finNUEVA) == 1){
+
+                printf ("\nHay solapamiento entre Artistas\n");
+                return 1;
+
+            }
+
+        }
+
+        if (presentaciones[i].idEscenario == nueva.idEscenario){
+
+            if (haySolapamiento(presentaciones[i].horaInicio, finACTUAL, nueva.horaInicio, finNUEVA) == 1){
+
+                printf ("\nHay solapamiento entre Escenarios\n");
+                return 1;
+
+            }
+
+        }
+
     }
 
     return 0;

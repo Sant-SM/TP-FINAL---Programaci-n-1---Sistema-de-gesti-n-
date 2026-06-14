@@ -18,6 +18,8 @@ stHorario crearHoriario (int h, int m){
 
     }else {
 
+        printf ("\nError, las horas tienen que ser menor a 24 y los minutos menor a 60");
+
         dato.esValido = 0;
 
     }
@@ -30,6 +32,8 @@ stHorario crearHoriario (int h, int m){
 stHorario pedirHorario (){
 
     stHorario dato;
+
+    printf ("\n---HS DE INICIO DE LA PRESENTACION---\n");
 
 printf ("\nHORAS: ");
 scanf("%i", &dato.horas);
@@ -55,6 +59,8 @@ stDuracion crearDuracion (int h, int m){
 
     }else {
 
+        printf ("\nError, los minutos tienen que ser menor a 60");
+
         dato.esValido = 0;
 
     }
@@ -65,6 +71,8 @@ stDuracion crearDuracion (int h, int m){
 stDuracion pedirDuracion(){
 
     stDuracion dato;
+
+    printf ("\n---DURACION DE LA PRESENTACION---\n");
 
 printf ("\nHORAS: ");
 scanf("%i", &dato.horas);
@@ -89,6 +97,8 @@ stHorario calcularFin (stHorario horarioINICIO, stDuracion horarioDURACION){
         fin.horas++;
 
     }
+
+    fin.horas %= 24;
 
     fin.esValido = 1;
     return fin;
