@@ -8,6 +8,9 @@
 #include "constantes.h"
 #include "utilidades.h"
 
+//nombre[strcspn(nombre, "\n")] = '\0';                   BORRA SALTO DE LINEA
+
+
 //======================================================================/LLAMADO DE FUNCIONES/
 
 
@@ -47,7 +50,7 @@ do{
 
     switch(opcion){
 
-        //======================================================== ALTAS
+        //========================================================/ALTAS/
 
         case 1:
 
@@ -63,14 +66,17 @@ do{
             switch(subOpcion){
 
                 case 1:
+                    ordenarArtistas(artistas, validosARTISTAS);
                     cargarArtista(artistas, &validosARTISTAS);
                     break;
 
                 case 2:
+                    ordenarEscenarios(escenarios, validosESCENARIOS);
                     cargarEscenario(escenarios, &validosESCENARIOS);
                     break;
 
                 case 3:
+                    //ordenarPresentaciones(...);   ///LAS PRESENTACIONES SE ORDENAN POR ID? O COMO???
                     cargaPresentaciones(presentaciones, &validosPRESENTACIONES, artistas, validosARTISTAS, escenarios, validosESCENARIOS);
                     break;
 
@@ -80,7 +86,7 @@ do{
 
             break;
 
-        //======================================================== MODIFICAR
+        //========================================================/MODIFICAR/
 
         case 2:
 
@@ -113,7 +119,7 @@ do{
 
             break;
 
-        //======================================================== BORRAR
+        //========================================================/BORRAR/
 
         case 3:
 
@@ -146,7 +152,7 @@ do{
 
             break;
 
-        //======================================================== LISTADOS COMPLETOS
+        //========================================================/LISTADOS COMPLETOS/
 
         case 4:
 
@@ -162,15 +168,15 @@ do{
             switch(subOpcion){
 
                 case 1:
-                    // mostrarArtistas(...)
+                    mostrarArtistas(artistas, validosARTISTAS);
                     break;
 
                 case 2:
-                    // mostrarEscenarios(...)
+                    mostrarEscenarios(escenarios, validosESCENARIOS);
                     break;
 
                 case 3:
-                    // mostrarPresentaciones(...)
+                    mostrarPresentaciones(presentaciones, validosPRESENTACIONES);
                     break;
 
                 default:
@@ -179,7 +185,7 @@ do{
 
             break;
 
-        //======================================================== FILTRADOS
+        //========================================================/FILTRADOS/
 
         case 5:
 
@@ -194,11 +200,11 @@ do{
             switch(subOpcion){
 
                 case 1:
-                    // mostrarPresentacionesPorArtista(...)
+                    filtrarPresentacionXartista(presentaciones, validosPRESENTACIONES, artistas, validosARTISTAS);
                     break;
 
                 case 2:
-                    // mostrarPresentacionesPorEscenario(...)
+                    filtrarPresentacionXescenario(presentaciones, validosPRESENTACIONES, escenarios, validosESCENARIOS);
                     break;
 
                 default:
@@ -207,7 +213,7 @@ do{
 
             break;
 
-        //======================================================== SALIR
+        //========================================================/SALIR/
 
         case 0:
 
@@ -227,9 +233,6 @@ do{
 
 
 //=========================================================================/FUNCIONES/
-
-//nombre[strcspn(nombre, "\n")] = '\0';                   BORRA SALTO DE LINEA
-
 
 
 

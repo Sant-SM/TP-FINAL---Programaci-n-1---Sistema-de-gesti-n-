@@ -99,3 +99,48 @@ int existeArtista (stArtista artista[], int validos, int id){
 
 }
 
+//====================================================================================================================/mostrar/
+
+void mostrarArtistas (stArtista artista[], int validos){
+
+    for (int i = 0; i < validos; i++){
+
+        printf ("\n=========================\n");
+
+        mostrarArtista(artista[i]);
+
+    }
+
+}
+
+void mostrarArtista (stArtista artista){
+
+        printf ("\nID del Artista: %i", artista.id);
+        printf ("\nNombre del Artista: %s", artista.nombre);
+        printf ("\nGenero del Artista: %s", artista.genero);
+
+}
+
+//==============================================================================================================/ordenar/
+
+void ordenarArtistas (stArtista artista[], int validos){
+
+    stArtista aux;
+
+    for (int i = 0; i < validos - 1; i++){
+
+        for (int j = i + 1; j < validos; j++){
+
+            if (stricmp(artista[i].nombre, artista[j].nombre) > 0){
+
+                aux = artista[i];
+                artista[i] = artista[j];
+                artista[j] = aux;
+
+            }
+
+        }
+    }
+
+}
+

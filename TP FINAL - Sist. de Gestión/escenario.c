@@ -99,3 +99,47 @@ int existeEscenarioID (stEscenario escenario[], int validos, int id){ ///ESTA FU
     return 0;
 
 }
+
+//====================================================================================================================/mostrar/
+
+void mostrarEscenarios (stEscenario escenario[], int validos){
+
+    for (int i = 0; i < validos; i++){
+
+        printf ("\n=========================\n");
+
+        mostrarEscenario(escenario[i]);
+
+    }
+
+}
+
+void mostrarEscenario (stEscenario escenario){
+
+        printf ("\nID del Escenario: %i", escenario.id);
+        printf ("\nNombre del Escenario: %s", escenario.nombre);
+
+}
+
+//=======================================================================================================================/ordenar/
+
+void ordenarEscenarios (stEscenario escenario[], int validos){
+
+    stEscenario aux;
+
+    for (int i = 0; i < validos - 1; i++){
+
+        for (int j = i + 1; j < validos; j++){
+
+            if (stricmp(escenario[i].nombre, escenario[j].nombre) > 0){
+
+                aux = escenario[i];
+                escenario[i] = escenario[j];
+                escenario[j] = aux;
+
+            }
+
+        }
+    }
+
+}

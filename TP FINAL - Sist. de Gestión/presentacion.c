@@ -180,4 +180,116 @@ int existeSolapamientoPRES(stPresentacion presentaciones[], int validos, stPrese
 
 }
 
+//====================================================================================================================/mostrar/
+
+void mostrarPresentaciones (stPresentacion precentacion[], int validos){
+
+    for (int i = 0; i < validos; i++){
+
+        printf ("\n=========================\n");
+
+        mostrarPresentacion(precentacion[i]);
+
+    }
+
+}
+
+void mostrarPresentacion (stPresentacion precentacion){
+
+        stHorario fin = calcularFin(precentacion.horaInicio, precentacion.duracion);;
+
+        printf ("\nID del Escenario: %i", precentacion.id);
+        printf ("\nID del Artista de la presentacion: %i", precentacion.idArtista);
+        printf ("\nID del Escenario de la presentacion: %i", precentacion.idEscenario);
+        printf ("\nHorario de Inicio de la presentacion: %i:%i", precentacion.horaInicio.horas, precentacion.horaInicio.minutos);
+        printf ("\nDuracion de la presentacion: %i:%i", precentacion.duracion.horas, precentacion.duracion.minutos);
+        printf ("\nHorario de Finalizacion de la presentacion: %i:%i", fin.horas, fin.minutos);
+}
+
+//===============================================================================================================/mostrar FILTRADO/
+
+void mostrarPresentacionXartista (stPresentacion presentacion[], int validos, int id){
+
+    int flag = 0;
+
+    for (int i = 0; i < validos; i++){
+
+        if (presentacion[i].idArtista == id){
+
+            mostrarPresentacion(presentacion[i]);
+            flag = 1;
+
+        }
+
+    }
+
+    if (flag == 0){
+
+            printf ("\nEl artista no posee presentaciones cargadas en el sistema");
+
+    }
+}
+
+void filtrarPresentacionXartista(stPresentacion presentacion[], int validosP, stArtista artista[], int validosA){
+
+        int id;
+
+    printf ("\nIngrese el ID del artista que desea encontrar: ");
+    id = pedirEntero();
+
+        if (existeArtista(artista, validosA, id) == 0){
+
+            printf ("\nError, el artista no existe");
+            return;
+
+        }
+
+    printf("\n===== PRESENTACIONES DEL ARTISTA =====\n");
+
+    mostrarPresentacionXartista(presentacion, validosP, id);
+
+}
+
+void mostrarPresentacionXescenario (stPresentacion presentacion[], int validos, int id){
+
+    int flag = 0;
+
+    for (int i = 0; i < validos; i++){
+
+        if (presentacion[i].idEscenario == id){
+
+            mostrarPresentacion(presentacion[i]);
+            flag = 1;
+
+        }
+
+    }
+
+    if (flag == 0){
+
+            printf ("\El escenario no posee presentaciones cargadas en el sistema");
+
+    }
+}
+
+void filtrarPresentacionXescenario(stPresentacion presentacion[], int validosP, stEscenario escenario[], int validosE){
+
+        int id;
+
+    printf ("\nIngrese el ID del escenario que desea encontrar: ");
+    id = pedirEntero();
+
+        if (existeEscenarioID(escenario, validosE, id) == 0){
+
+            printf ("\nError, el escenario no existe");
+            return;
+
+        }
+
+    printf("\n===== PRESENTACIONES DEL ESCENARIO =====\n");
+
+    mostrarPresentacionXescenario(presentacion, validosP, id);
+
+}
+
 

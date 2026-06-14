@@ -9,8 +9,19 @@ char genero[30];
 
 } stArtista;
 
+//============================================================================================/cargar/
+
 stArtista pedirArtistas ();
 void cargarArtista(stArtista artista [], int * validos);
 int existeArtista (stArtista artista[], int validos, int id);
+
+//============================================================================================/mostrar/
+
+void mostrarArtistas (stArtista artista[], int validos);
+void mostrarArtista (stArtista artista);
+
+//=============================================================================================/ordenar/
+
+void ordenarArtistas (stArtista artista[], int validos);
 
 #endif // ARTISTAS_H_INCLUDED
