@@ -23,9 +23,9 @@
 1781277613 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.h
 	"tiempo.h"
 
-1781299577 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.h
+1781401867 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.h
 
-1781301815 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
+1781401338 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -43,7 +43,7 @@
 
 1781278604 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
 
-1781302165 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
+1781401178 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -54,7 +54,7 @@
 	"constantes.h"
 	"utilidades.h"
 
-1781301737 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
+1781401471 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

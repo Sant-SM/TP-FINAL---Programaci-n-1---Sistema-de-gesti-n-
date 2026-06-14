@@ -14,7 +14,7 @@ stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenar
 
     do{
 
-    printf ("Ingrese ID de la presentacion: ");
+    printf ("\nIngrese ID de la presentacion: ");
     dato.id = pedirEntero();
 
     if (dato.id < 0){
@@ -73,7 +73,7 @@ stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenar
 
         }
 
-    }while (dato.idEscenario < 0 || existeEscenarioID(escenario, validosESC, dato.idEscenario));
+    }while (dato.idEscenario < 0 || existeEscenarioID(escenario, validosESC, dato.idEscenario) == 0);
 
 
     //=======================================================================/CARGA DE HORARIOS/

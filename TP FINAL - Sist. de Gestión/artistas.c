@@ -11,7 +11,7 @@ stArtista pedirArtistas (){
 
     do{
 
-    printf ("Ingrese el ID del artista: ");
+    printf ("\nIngrese el ID del artista: ");
     dato.id = pedirEntero();
 
     if (dato.id < 0){
@@ -25,7 +25,7 @@ stArtista pedirArtistas (){
 
     do{
 
-    printf ("Ingrese el Nombre del artista: ");
+    printf ("\nIngrese el Nombre del artista: ");
     fgets(dato.nombre, 50, stdin);
     dato.nombre[strcspn(dato.nombre, "\n")] = '\0';
 
@@ -40,9 +40,9 @@ stArtista pedirArtistas (){
 
     do {
 
-printf ("Ingrese el Genero del artista: ");
-fgets(dato.genero, 30, stdin);
-dato.genero[strcspn(dato.genero, "\n")] = '\0';
+    printf ("\Ingrese el Genero del artista: ");
+    fgets(dato.genero, 30, stdin);
+    dato.genero[strcspn(dato.genero, "\n")] = '\0';
 
         if (strlen(dato.genero) == 0){
 

@@ -11,7 +11,7 @@ stEscenario pedirEscenario(){
 
     do{
 
-    printf ("Ingrese ID del escenario: ");
+    printf ("\nIngrese ID del escenario: ");
     dato.id = pedirEntero();
 
     if (dato.id < 0){
@@ -25,7 +25,7 @@ stEscenario pedirEscenario(){
 
     do{
 
-    printf ("Ingrese Nombre del escenario: ");
+    printf ("\nIngrese Nombre del escenario: ");
     fgets(dato.nombre, 50, stdin);
     dato.nombre[strcspn(dato.nombre, "\n")] = '\0';
 
@@ -90,7 +90,7 @@ int existeEscenarioID (stEscenario escenario[], int validos, int id){ ///ESTA FU
 
     for (int i = 0; i < validos; i++){
 
-        if (escenario[i].id == id == 0){
+        if (escenario[i].id == id){
 
             return 1;
         }

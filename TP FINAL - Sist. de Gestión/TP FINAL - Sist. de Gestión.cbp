@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="artistas.h" />
+		<Unit filename="constantes.h" />
 		<Unit filename="escenario.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -50,6 +51,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tiempo.h" />
+		<Unit filename="utilidades.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="utilidades.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
