@@ -25,11 +25,22 @@ int existeSolapamientoPRES(stPresentacion presentaciones[], int validos, stPrese
 void mostrarPresentacion (stPresentacion precentacion);
 void mostrarPresentaciones (stPresentacion precentacion[], int validos);
 
-//============================================================================================/mostrar filtrado/
+//===================================================================================/mostrar filtrado/
 
 void mostrarPresentacionXartista (stPresentacion presentacion[], int validos, int id);
 void filtrarPresentacionXartista (stPresentacion presentacion[], int validosP, stArtista artista[], int validosA);
 void mostrarPresentacionXescenario (stPresentacion presentacion[], int validos, int id);
 void filtrarPresentacionXescenario (stPresentacion presentacion[], int validosP, stEscenario escenario[], int validosE);
+
+//==============================================================================================/buscar/
+
+int buscarXpresentacion (stPresentacion presentacion[], int validos, int id);
+
+//============================================================================================================/modificar/
+
+void modificarPresentacion (stPresentacion presentacion[], int validosP, stEscenario escenario[], int validosE, stArtista artista[], int validosA);
+int existeSolapamientoPRES_Modificar (stPresentacion presentaciones[], int validos, stPresentacion nueva, int pos);
+
+//===============================================================================================================/borrar/
 
 #endif // PRESENTACION_H_INCLUDED

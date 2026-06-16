@@ -35,13 +35,19 @@ stHorario pedirHorario (){
 
     printf ("\n---HS DE INICIO DE LA PRESENTACION---\n");
 
+    do{
+
 printf ("\nHORAS: ");
 scanf("%i", &dato.horas);
 
 printf ("\nMINUTOS: ");
 scanf("%i", &dato.minutos);
 
-    return crearHoriario(dato.horas, dato.minutos);
+    dato = crearHoriario(dato.horas, dato.minutos);
+
+    }while (dato.esValido == 0);
+
+    return dato;
 
 }
 
@@ -74,13 +80,19 @@ stDuracion pedirDuracion(){
 
     printf ("\n---DURACION DE LA PRESENTACION---\n");
 
+    do{
+
 printf ("\nHORAS: ");
 scanf("%i", &dato.horas);
 
 printf ("\nMINUTOS: ");
 scanf("%i", &dato.minutos);
 
-    return crearDuracion(dato.horas, dato.minutos);
+    dato = crearDuracion(dato.horas, dato.minutos);
+
+    }while (dato.esValido == 0);
+
+    return dato;
 
 }
 

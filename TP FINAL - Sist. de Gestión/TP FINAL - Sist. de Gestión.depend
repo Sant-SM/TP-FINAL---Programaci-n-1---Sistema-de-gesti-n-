@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1781475661 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
+1781570655 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -18,14 +18,14 @@
 
 1781181526 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pedirartistas.h
 
-1781475315 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.h
+1781564127 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.h
 
-1781474018 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.h
+1781563875 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.h
 	"tiempo.h"
 
 1781401867 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.h
 
-1781475456 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
+1781570271 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -33,7 +33,7 @@
 	"constantes.h"
 	"utilidades.h"
 
-1781444961 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.c
+1781565379 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -41,9 +41,9 @@
 	"constantes.h"
 	"utilidades.h"
 
-1781475171 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
+1781564127 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
 
-1781473731 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
+1781570337 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -54,7 +54,7 @@
 	"constantes.h"
 	"utilidades.h"
 
-1781475456 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
+1781570232 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

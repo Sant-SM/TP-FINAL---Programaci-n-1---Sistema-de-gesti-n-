@@ -144,3 +144,68 @@ void ordenarArtistas (stArtista artista[], int validos){
 
 }
 
+//==============================================================================================================/buscar/
+
+int buscarXartista (stArtista artista[], int validos, int id){
+
+    for (int i = 0; i < validos; i++){
+
+        if (artista[i].id == id){
+
+            return i;
+
+        }
+
+    }
+
+    return -1;
+
+}
+
+//============================================================================================================/modificar/
+
+void modificarArtista (stArtista artista[], int validos){
+
+        int id;
+
+    printf ("\nIngrese ID del artista que desea modificar: ");
+    scanf("%i", &id);
+
+    int pos = buscarXartista(artista, validos, id);
+
+    if(pos == -1){
+
+    printf("\nArtista inexistente");
+    return;
+
+    }else{
+
+        printf("\nArtista encontrado.\n");
+
+    getchar();
+
+    do{
+
+    printf("\nIngrese el nuevo nombre: ");
+    fgets(artista[pos].nombre, 50, stdin);
+
+    }while(strlen(artista[pos].nombre) == 0);
+
+    artista[pos].nombre[strcspn(artista[pos].nombre, "\n")] = '\0';
+
+    do{
+
+    printf("\nIngrese el nuevo genero: ");
+    fgets(artista[pos].genero, 30, stdin);
+
+    }while(strlen(artista[pos].genero) == 0);
+
+    artista[pos].genero[strcspn(artista[pos].genero, "\n")] = '\0';
+
+    printf("\nArtista modificado correctamente.\n");
+    }
+
+}
+
+
+//===============================================================================================================/borrar/

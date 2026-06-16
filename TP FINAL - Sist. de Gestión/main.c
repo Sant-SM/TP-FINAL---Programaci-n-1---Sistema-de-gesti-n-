@@ -66,17 +66,14 @@ do{
             switch(subOpcion){
 
                 case 1:
-                    ordenarArtistas(artistas, validosARTISTAS);
                     cargarArtista(artistas, &validosARTISTAS);
                     break;
 
                 case 2:
-                    ordenarEscenarios(escenarios, validosESCENARIOS);
                     cargarEscenario(escenarios, &validosESCENARIOS);
                     break;
 
                 case 3:
-                    //ordenarPresentaciones(...);   ///LAS PRESENTACIONES SE ORDENAN POR ID? O COMO???
                     cargaPresentaciones(presentaciones, &validosPRESENTACIONES, artistas, validosARTISTAS, escenarios, validosESCENARIOS);
                     break;
 
@@ -102,15 +99,18 @@ do{
             switch(subOpcion){
 
                 case 1:
-                    // modificarArtista(...)
+                    modificarArtista (artistas, validosARTISTAS);
+                    ordenarArtistas(artistas, validosARTISTAS);
                     break;
 
                 case 2:
-                    // modificarEscenario(...)
+                    modificarEscenario (escenarios, validosESCENARIOS);
+                    ordenarEscenarios(escenarios, validosESCENARIOS);
                     break;
 
                 case 3:
-                    // modificarPresentacion(...)
+                    modificarPresentacion (presentaciones, validosPRESENTACIONES, escenarios, validosESCENARIOS, artistas, validosARTISTAS);
+                    //ordenarPresentacion(...)
                     break;
 
                 default:
@@ -168,14 +168,17 @@ do{
             switch(subOpcion){
 
                 case 1:
+                    ordenarArtistas(artistas, validosARTISTAS);
                     mostrarArtistas(artistas, validosARTISTAS);
                     break;
 
                 case 2:
+                    ordenarEscenarios(escenarios, validosESCENARIOS);
                     mostrarEscenarios(escenarios, validosESCENARIOS);
                     break;
 
                 case 3:
+                    //ordenarPresentaciones(...);   ///LAS PRESENTACIONES SE ORDENAN POR ID? O COMO???
                     mostrarPresentaciones(presentaciones, validosPRESENTACIONES);
                     break;
 

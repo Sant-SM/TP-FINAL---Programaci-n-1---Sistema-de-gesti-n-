@@ -24,4 +24,14 @@ void mostrarEscenarios (stEscenario escenario[], int validos);
 
 void ordenarEscenarios (stEscenario escenario[], int validos);
 
+//=============================================================================================/buscar/
+
+int buscarXescenario (stEscenario escenario[], int validos, int id);
+
+//============================================================================================================/modificar/
+
+void modificarEscenario (stEscenario escenario[], int validos);
+
+//===============================================================================================================/borrar/
+
 #endif // ESCENARIO_H_INCLUDED

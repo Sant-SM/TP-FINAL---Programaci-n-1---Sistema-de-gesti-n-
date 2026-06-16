@@ -143,3 +143,59 @@ void ordenarEscenarios (stEscenario escenario[], int validos){
     }
 
 }
+
+//==============================================================================================================/buscar/
+
+int buscarXescenario (stEscenario escenario[], int validos, int id){
+
+    for (int i = 0; i < validos; i++){
+
+        if (escenario[i].id == id){
+
+            return i;
+
+        }
+
+    }
+
+    return -1;
+
+}
+
+//============================================================================================================/modificar/
+
+void modificarEscenario (stEscenario escenario[], int validos){
+
+        int id;
+
+    printf ("\nIngrese ID del escenario que desea modificar: ");
+    scanf("%i", &id);
+
+    int pos = buscarXescenario(escenario, validos, id);
+
+    if(pos == -1){
+
+    printf("\nEscenario inexistente");
+    return;
+
+    }else{
+
+    printf("\nEscenario encontrado.\n");
+
+    getchar();
+
+    do{
+
+    printf("\nIngrese el nuevo nombre: ");
+    fgets(escenario[pos].nombre, 50, stdin);
+    escenario[pos].nombre[strcspn(escenario[pos].nombre, "\n")] = '\0';
+
+    }while(strlen(escenario[pos].nombre) == 0);
+
+    printf("\nEscenario modificado correctamente.\n");
+    }
+
+}
+
+
+//===============================================================================================================/borrar/

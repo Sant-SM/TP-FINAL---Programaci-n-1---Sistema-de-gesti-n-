@@ -24,4 +24,14 @@ void mostrarArtista (stArtista artista);
 
 void ordenarArtistas (stArtista artista[], int validos);
 
+//==============================================================================================/buscar/
+
+int buscarXartista (stArtista artista[], int validos, int id);
+
+//============================================================================================================/modificar/
+
+void modificarArtista (stArtista artista[], int validos);
+
+//===============================================================================================================/borrar/
+
 #endif // ARTISTAS_H_INCLUDED

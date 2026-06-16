@@ -78,17 +78,9 @@ stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenar
 
     //=======================================================================/CARGA DE HORARIOS/
 
-    do{
-
     dato.horaInicio = pedirHorario();
 
-    }while(dato.horaInicio.esValido == 0);
-
-    do{
-
     dato.duracion = pedirDuracion();
-
-    }while(dato.duracion.esValido == 0);
 
     return dato;
 
@@ -291,5 +283,140 @@ void filtrarPresentacionXescenario(stPresentacion presentacion[], int validosP, 
     mostrarPresentacionXescenario(presentacion, validosP, id);
 
 }
+
+//==============================================================================================================/buscar/
+
+int buscarXpresentacion (stPresentacion presentacion[], int validos, int id){
+
+    for (int i = 0; i < validos; i++){
+
+        if (presentacion[i].id == id){
+
+            return i;
+
+        }
+
+    }
+
+    return -1;
+
+}
+
+//============================================================================================================/modificar/
+
+void modificarPresentacion (stPresentacion presentacion[], int validosP, stEscenario escenario[], int validosE, stArtista artista[], int validosA){
+
+        int id;
+        int auxIDartista;
+        int auxIDescenario;
+
+    printf ("\nIngrese ID de la presentacion que desea modificar: ");
+    scanf("%i", &id);
+
+    int pos = buscarXpresentacion(presentacion, validosP, id);
+
+    if(pos == -1){
+
+    printf("\nPresentacion inexistente");
+    return;
+
+    }
+
+    printf("\nPresentacion encontrado.\n");
+
+    stPresentacion aux = presentacion[pos];
+
+        do{
+
+    printf("\nIngrese el nuevo ID del artista: ");
+    scanf ("%i", &auxIDartista);
+
+    if (existeArtista(artista, validosA, auxIDartista) == 1){
+
+        aux.idArtista = auxIDartista;
+
+    }else{
+
+    printf("\nError, artista inexistente");
+
+    }
+        }while (existeArtista(artista, validosA, auxIDartista) == 0);
+
+
+        do{
+
+    printf("\nIngrese el nuevo ID del escenario: ");
+    scanf ("%i", &auxIDescenario);
+
+    if (existeEscenarioID(escenario, validosE, auxIDescenario) == 1){
+
+        aux.idEscenario = auxIDescenario;
+
+    }else{
+
+    printf("\nError, escenario inexistente");
+
+    }
+        }while (existeEscenarioID(escenario, validosE, auxIDescenario) == 0);
+
+    printf("\nIngrese el nuevo horario de inicio: ");
+    aux.horaInicio = pedirHorario();
+
+    printf("\nIngrese la nueva duracion: ");
+    aux.duracion = pedirDuracion();
+
+    if (existeSolapamientoPRES_Modificar(presentacion, validosP, aux, pos) == 0){
+
+        presentacion[pos] = aux;
+        printf("\nPresentacion modificada correctamente.\n");
+
+        }else{
+
+    printf("\nError, la modificacion genera solapamiento.\n");
+
+    }
+}
+
+//=========================================================//
+
+int existeSolapamientoPRES_Modificar (stPresentacion presentaciones[], int validos, stPresentacion nueva, int pos){
+
+    stHorario finNUEVA = calcularFin(nueva.horaInicio, nueva.duracion);
+
+    for (int i = 0; i < validos; i++){
+
+        if (pos != i){
+
+        stHorario finACTUAL = calcularFin(presentaciones[i].horaInicio, presentaciones[i].duracion);
+
+        if (presentaciones[i].idArtista == nueva.idArtista){
+
+            if (haySolapamiento(presentaciones[i].horaInicio, finACTUAL, nueva.horaInicio, finNUEVA) == 1){
+
+                printf ("\nHay solapamiento entre Artistas\n");
+                return 1;
+
+            }
+
+        }
+
+        if (presentaciones[i].idEscenario == nueva.idEscenario){
+
+            if (haySolapamiento(presentaciones[i].horaInicio, finACTUAL, nueva.horaInicio, finNUEVA) == 1){
+
+                printf ("\nHay solapamiento entre Escenarios\n");
+                return 1;
+
+            }
+
+        }
+    }
+}
+
+    return 0;
+
+}
+
+//===============================================================================================================/borrar/
 
 
