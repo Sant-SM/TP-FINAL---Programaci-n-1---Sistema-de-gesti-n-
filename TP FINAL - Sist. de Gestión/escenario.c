@@ -110,6 +110,8 @@ void mostrarEscenarios (stEscenario escenario[], int validos){
 
         mostrarEscenario(escenario[i]);
 
+        printf ("\n=========== ESOS SON LOS ESCENARIOS ==============\n");
+
     }
 
 }

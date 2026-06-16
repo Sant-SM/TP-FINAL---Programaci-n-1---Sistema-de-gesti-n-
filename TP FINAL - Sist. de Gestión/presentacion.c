@@ -250,8 +250,12 @@ void mostrarPresentacionXescenario (stPresentacion presentacion[], int validos, 
 
         if (presentacion[i].idEscenario == id){
 
+            printf ("\n=========================\n");
+
             mostrarPresentacion(presentacion[i]);
             flag = 1;
+
+            printf ("\n=========== ESAS SON LAS PRESENTACIONES ==============\n");
 
         }
 

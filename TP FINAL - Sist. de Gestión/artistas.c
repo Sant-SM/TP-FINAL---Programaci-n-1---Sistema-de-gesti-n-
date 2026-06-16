@@ -109,6 +109,8 @@ void mostrarArtistas (stArtista artista[], int validos){
 
         mostrarArtista(artista[i]);
 
+        printf ("\n=========== ESOS SON LOS ARTISTAS ==============\n");
+
     }
 
 }
