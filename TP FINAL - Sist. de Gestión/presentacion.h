@@ -24,6 +24,7 @@ int existeSolapamientoPRES(stPresentacion presentaciones[], int validos, stPrese
 
 void mostrarPresentacion (stPresentacion precentacion);
 void mostrarPresentaciones (stPresentacion precentacion[], int validos);
+void ordenarPresentacionXhorario (stPresentacion presentacion[], int validos);
 
 //===================================================================================/mostrar filtrado/
 

@@ -63,7 +63,7 @@ stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenar
 
     }
 
-    if (existeEscenarioID(escenario, validosESC, dato.idEscenario) == 1){                   ///EL MENSAJE ESTA AL REVEZ, WTF???
+    if (existeEscenarioID(escenario, validosESC, dato.idEscenario) == 1){
 
             printf ("\nEscenario encontrado\n");
 
@@ -182,6 +182,8 @@ void mostrarPresentaciones (stPresentacion precentacion[], int validos){
 
         mostrarPresentacion(precentacion[i]);
 
+        printf ("\n============ ESAS SON LAS PRESENTACIONES =============\n");
+
     }
 
 }
@@ -198,6 +200,26 @@ void mostrarPresentacion (stPresentacion precentacion){
         printf ("\nHorario de Finalizacion de la presentacion: %i:%i", fin.horas, fin.minutos);
 }
 
+//===============================================================================================================/ordenar/
+
+void ordenarPresentacionXhorario (stPresentacion presentacion[], int validos){
+
+        stPresentacion aux;
+
+    for(int i = 0; i < validos - 1; i++){
+
+        for(int j = i + 1; j < validos; j++){
+
+            if (horarioAMinutos(presentacion[i].horaInicio) > horarioAMinutos(presentacion[j].horaInicio)){
+
+                aux = presentacion[i];
+                presentacion[i] = presentacion[j];
+                presentacion[j] = aux;
+
+            }
+        }
+    }
+}
 //===============================================================================================================/mostrar FILTRADO/
 
 void mostrarPresentacionXartista (stPresentacion presentacion[], int validos, int id){
@@ -239,6 +261,23 @@ void filtrarPresentacionXartista(stPresentacion presentacion[], int validosP, st
     printf("\n===== PRESENTACIONES DEL ARTISTA =====\n");
 
     mostrarPresentacionXartista(presentacion, validosP, id);
+
+}
+
+int contarPresentacionesXartista(stPresentacion presentacion[], int validosP, int id){ ///FUNCION ESPECIFICA PARA BORRAR
+
+        int cant = 0;
+
+        for (int i = 0; i < validosP; i++){
+
+            if (presentacion[i].idArtista == id){
+
+                cant++;
+
+            }
+    }
+
+    return cant;
 
 }
 

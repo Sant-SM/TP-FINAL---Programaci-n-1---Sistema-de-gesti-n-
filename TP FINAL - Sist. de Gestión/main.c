@@ -105,7 +105,7 @@ do{
 
                 case 3:
                     modificarPresentacion (presentaciones, validosPRESENTACIONES, escenarios, validosESCENARIOS, artistas, validosARTISTAS);
-                    //ordenarPresentacion(...)
+                    ordenarPresentacionXhorario(presentaciones, validosPRESENTACIONES);
                     break;
 
                 default:
@@ -173,7 +173,7 @@ do{
                     break;
 
                 case 3:
-                    //ordenarPresentaciones(...);   ///LAS PRESENTACIONES SE ORDENAN POR ID? O COMO???
+                    ordenarPresentacionXhorario(presentaciones, validosPRESENTACIONES);
                     mostrarPresentaciones(presentaciones, validosPRESENTACIONES);
                     break;
 
