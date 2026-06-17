@@ -19,7 +19,7 @@ int esValido;
 
 stHorario pedirHorario();
 stDuracion pedirDuracion();
-stHorario crearHoriario (int h, int m);
+stHorario crearHorario (int h, int m);
 stDuracion crearDuracion (int h, int m);
 stHorario calcularFin (stHorario horarioINICIO, stDuracion horarioDURACION);
 int horarioAMinutos(stHorario h);        ///PARA SIMPLIFICAR FUNCION haySolapamiento

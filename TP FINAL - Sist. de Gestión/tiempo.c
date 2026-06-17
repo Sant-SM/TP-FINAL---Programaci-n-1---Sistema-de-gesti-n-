@@ -5,7 +5,7 @@
 #include "constantes.h"
 #include "utilidades.h"
 
-stHorario crearHoriario (int h, int m){
+stHorario crearHorario (int h, int m){
 
     stHorario dato;
 
@@ -43,7 +43,7 @@ scanf("%i", &dato.horas);
 printf ("\nMINUTOS: ");
 scanf("%i", &dato.minutos);
 
-    dato = crearHoriario(dato.horas, dato.minutos);
+    dato = crearHorario(dato.horas, dato.minutos);
 
     }while (dato.esValido == 0);
 

@@ -130,15 +130,102 @@ do{
             switch(subOpcion){
 
                 case 1:
-                    // borrarArtista(...)
+
+                    int idA;
+                    char opcionA = 's';
+
+                    printf("Ingrese el ID del artista que quiere borrar: ");
+                    idA = pedirEntero();
+
+                    int cantA = contarPresentacionesXartista(presentaciones, validosPRESENTACIONES, idA);
+
+                    int posA = buscarXartista(artistas, validosARTISTAS, idA);
+
+                    if(posA == -1){
+
+                        printf("\nArtista inexistente.\n");
+                    }
+                    else{
+
+                        if (cantA > 0){
+
+                            printf ("\nHay %i presentaciones pendientes del artista. Seguro que desea borrar? ", cantA);
+                            printf ("\n ingrese 's' || 'S' para borrar, ingrese otra letra para borrar: ");
+                            scanf(" %c", &opcionA);
+
+                             if(opcionA == 's' || opcionA == 'S'){
+
+                                validosPRESENTACIONES = borrarPresentacionXartista(presentaciones, validosPRESENTACIONES, idA);
+                                validosARTISTAS = borrarArtista(artistas, validosARTISTAS, idA);
+
+                                }
+                                else{
+
+                                    printf("\nOperacion cancelada.\n");
+                                }
+                            }else {
+
+                                validosARTISTAS = borrarArtista(artistas, validosARTISTAS, idA);
+
+                            }
+
+                        }
+
                     break;
 
                 case 2:
-                    // borrarEscenario(...)
+
+                    int idE;
+                    char opcionE = 's';
+
+                    printf("Ingrese el ID del escenario que quiere borrar: ");
+                    idE = pedirEntero();
+
+                    int cantE = contarPresentacionesXescenario(presentaciones, validosPRESENTACIONES, idE);
+
+                    int posE = buscarXescenario(escenarios, validosESCENARIOS, idE);
+
+                    if(posE == -1){
+
+                        printf("\nEscenario inexistente.\n");
+                    }
+                    else{
+
+                        if (cantE > 0){
+
+                            printf ("\nHay %i presentaciones pendientes del escenario. Seguro que desea borrar? ", cantE);
+                            printf ("\n ingrese 's' || 'S' para borrar, ingrese otra letra para borrar: ");
+                            scanf(" %c", &opcionE);
+
+                             if(opcionE == 's' || opcionE == 'S'){
+
+                                validosPRESENTACIONES = borrarPresentacionXescenario(presentaciones, validosPRESENTACIONES, idE);
+                                validosESCENARIOS = borrarEscenario(escenarios, validosESCENARIOS, idE);
+
+                                }
+                                else{
+
+                                    printf("\nOperacion cancelada.\n");
+                                }
+                            }else {
+
+                                validosESCENARIOS = borrarEscenario(escenarios, validosESCENARIOS, idE);
+
+                            }
+
+                        }
+
                     break;
 
                 case 3:
-                    // borrarPresentacion(...)
+
+                        int idP;
+
+                    printf("\nIngrese ID de la presentacion: ");
+                    idP = pedirEntero();
+
+                        validosPRESENTACIONES = borrarPresentacion(presentaciones, validosPRESENTACIONES, idP);
+
                     break;
 
                 default:

@@ -2,6 +2,8 @@
 #define PRESENTACION_H_INCLUDED
 
 #include "tiempo.h"
+#include "artistas.h"
+#include "escenario.h"
 
 typedef struct{
 
@@ -42,6 +44,15 @@ int buscarXpresentacion (stPresentacion presentacion[], int validos, int id);
 void modificarPresentacion (stPresentacion presentacion[], int validosP, stEscenario escenario[], int validosE, stArtista artista[], int validosA);
 int existeSolapamientoPRES_Modificar (stPresentacion presentaciones[], int validos, stPresentacion nueva, int pos);
 
+//===============================================================================================================/contar/
+
+int contarPresentacionesXartista(stPresentacion presentacion[], int validosP, int id);
+int contarPresentacionesXescenario(stPresentacion presentacion[], int validosP, int id);
+
 //===============================================================================================================/borrar/
+
+int borrarPresentacionXartista (stPresentacion presentaciones[], int validosP, int idArt);
+int borrarPresentacionXescenario (stPresentacion presentaciones[], int validosP, int idEsc);
+int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres);
 
 #endif // PRESENTACION_H_INCLUDED

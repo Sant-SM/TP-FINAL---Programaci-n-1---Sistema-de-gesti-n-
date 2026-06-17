@@ -34,4 +34,6 @@ void modificarArtista (stArtista artista[], int validos);
 
 //===============================================================================================================/borrar/
 
+int borrarArtista(stArtista artistas[], int validos, int id);
+
 #endif // ARTISTAS_H_INCLUDED

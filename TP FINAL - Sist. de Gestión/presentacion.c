@@ -281,6 +281,23 @@ int contarPresentacionesXartista(stPresentacion presentacion[], int validosP, in
 
 }
 
+int contarPresentacionesXescenario(stPresentacion presentacion[], int validosP, int id){ ///FUNCION ESPECIFICA PARA BORRAR
+
+        int cant = 0;
+
+        for (int i = 0; i < validosP; i++){
+
+            if (presentacion[i].idEscenario == id){
+
+                cant++;
+
+            }
+    }
+
+    return cant;
+
+}
+
 void mostrarPresentacionXescenario (stPresentacion presentacion[], int validos, int id){
 
     int flag = 0;
@@ -302,7 +319,7 @@ void mostrarPresentacionXescenario (stPresentacion presentacion[], int validos, 
 
     if (flag == 0){
 
-            printf ("\El escenario no posee presentaciones cargadas en el sistema");
+            printf ("\nEl escenario no posee presentaciones cargadas en el sistema");
 
     }
 }
@@ -462,4 +479,75 @@ int existeSolapamientoPRES_Modificar (stPresentacion presentaciones[], int valid
 
 //===============================================================================================================/borrar/
 
+int borrarPresentacionXartista (stPresentacion presentaciones[], int validosP, int idArt){
 
+    int i = 0;
+
+    while(i < validosP){
+
+        if(presentaciones[i].idArtista == idArt){
+
+            for(int j = i; j < validosP - 1; j++){
+
+                presentaciones[j] = presentaciones[j + 1];
+            }
+
+            validosP--;
+
+        }else{
+
+            i++;
+        }
+    }
+
+    return validosP;
+
+}
+
+int borrarPresentacionXescenario (stPresentacion presentaciones[], int validosP, int idEsc){
+
+    int i = 0;
+
+    while(i < validosP){
+
+        if(presentaciones[i].idEscenario == idEsc){
+
+            for(int j = i; j < validosP - 1; j++){
+
+                presentaciones[j] = presentaciones[j + 1];
+            }
+
+            validosP--;
+
+        }else{
+
+            i++;
+        }
+    }
+
+    return validosP;
+
+}
+
+int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres){
+
+    int pos = buscarXpresentacion(presentacion, validosP, idPres);
+
+        if(pos == -1){
+
+            printf("\nPresentacion inexistente.\n");
+            return validosP;
+        }
+
+        for(int i = pos; i < validosP - 1; i++){
+
+            presentacion[i] = presentacion[i + 1];
+        }
+
+        validosP--;
+
+        printf("\nPresentacion eliminada correctamente.\n");
+
+        return validosP;
+
+}

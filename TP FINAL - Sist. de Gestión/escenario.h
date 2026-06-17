@@ -34,4 +34,6 @@ void modificarEscenario (stEscenario escenario[], int validos);
 
 //===============================================================================================================/borrar/
 
+int borrarEscenario(stEscenario escenarios[], int validos, int id);
+
 #endif // ESCENARIO_H_INCLUDED

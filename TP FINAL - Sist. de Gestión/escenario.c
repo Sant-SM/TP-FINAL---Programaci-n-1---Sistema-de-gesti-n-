@@ -201,3 +201,26 @@ void modificarEscenario (stEscenario escenario[], int validos){
 
 
 //===============================================================================================================/borrar/
+
+int borrarEscenario(stEscenario escenarios[], int validos, int id){
+
+        int pos = buscarXescenario(escenarios, validos, id);
+
+        if (pos == -1){
+
+            printf ("\nEl escenario no existe");
+            return validos;
+
+        }
+
+        for (int i = pos; i < validos - 1; i++){
+
+            escenarios[i] = escenarios[i + 1];
+            }
+
+            validos--;
+
+        printf("\nEscenario eliminado correctamente.\n");
+
+    return validos;
+}

@@ -212,26 +212,25 @@ void modificarArtista (stArtista artista[], int validos){
 
 //===============================================================================================================/borrar/
 
-int borrarArtista(stArtista artista[], int validosA){
+int borrarArtista(stArtista artistas[], int validos, int id){
 
-    int id;
-    int cant;
+        int pos = buscarXartista(artistas, validos, id);
 
-    printf("Ingrese el ID del artista que quiere borrar: ");
-    scanf("%i", &id);
+        if (pos == -1){
 
-    int pos = buscarXartista(artista, validos, id);
+            printf ("\nEl artista no existe");
+            return validos;
 
-    if(pos == -1)
-    {
-        printf("\nArtista inexistente.\n");
-    }
-    else
-    {
+        }
 
-    contarPresentacionesXartista(presentacion, validosP, id);
+        for (int i = pos; i < validos - 1; i++){
 
-    }
+            artistas[i] = artistas[i + 1];
+            }
+
+            validos--;
+
+        printf("\nArtista eliminado correctamente.\n");
 
     return validos;
 }
