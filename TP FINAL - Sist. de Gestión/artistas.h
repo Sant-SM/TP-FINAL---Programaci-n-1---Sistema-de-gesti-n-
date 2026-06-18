@@ -36,4 +36,9 @@ void modificarArtista (stArtista artista[], int validos);
 
 int borrarArtista(stArtista artistas[], int validos, int id);
 
+//============================================================================================================/ARCHIVO/
+
+void guardarArtista(FILE *archi, stArtista artista);
+void exportarArtistasTXT(stArtista artistas[], int validos);
+
 #endif // ARTISTAS_H_INCLUDED

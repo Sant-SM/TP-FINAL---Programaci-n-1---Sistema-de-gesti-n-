@@ -38,6 +38,7 @@ do{
     printf("\n3- Borrar");
     printf("\n4- Listar");
     printf("\n5- Listados Filtrados");
+    printf("\n6- Exportar a TXT");
     printf("\n0- Salir");
 
     printf("\n\nIngrese una opcion: ");
@@ -296,6 +297,15 @@ do{
                     printf("\nOpcion invalida");
             }
 
+            break;
+
+            case 6:
+
+            exportarArtistasTXT(artistas, validosARTISTAS);
+            exportarEscenariosTXT(escenarios, validosESCENARIOS);
+            exportarPresentacionesTXT(presentaciones, validosPRESENTACIONES);
+
+            printf("\nTodos los archivos fueron exportados.\n");
             break;
 
         //========================================================/SALIR/

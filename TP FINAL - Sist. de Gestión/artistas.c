@@ -173,7 +173,7 @@ void modificarArtista (stArtista artista[], int validos){
     printf ("\nIngrese ID del artista que desea modificar: ");
     scanf("%i", &id);
 
-    int pos = buscarXartista(artista, validos, id);
+        int pos = buscarXartista(artista, validos, id);
 
     if(pos == -1){
 
@@ -188,23 +188,23 @@ void modificarArtista (stArtista artista[], int validos){
 
     do{
 
-    printf("\nIngrese el nuevo nombre: ");
-    fgets(artista[pos].nombre, 50, stdin);
+        printf("\nIngrese el nuevo nombre: ");
+        fgets(artista[pos].nombre, 50, stdin);
 
-    }while(strlen(artista[pos].nombre) == 0);
+        }while(strlen(artista[pos].nombre) == 0);
 
-    artista[pos].nombre[strcspn(artista[pos].nombre, "\n")] = '\0';
+        artista[pos].nombre[strcspn(artista[pos].nombre, "\n")] = '\0';
 
     do{
 
-    printf("\nIngrese el nuevo genero: ");
-    fgets(artista[pos].genero, 30, stdin);
+        printf("\nIngrese el nuevo genero: ");
+        fgets(artista[pos].genero, 30, stdin);
 
-    }while(strlen(artista[pos].genero) == 0);
+        }while(strlen(artista[pos].genero) == 0);
 
-    artista[pos].genero[strcspn(artista[pos].genero, "\n")] = '\0';
+        artista[pos].genero[strcspn(artista[pos].genero, "\n")] = '\0';
 
-    printf("\nArtista modificado correctamente.\n");
+        printf("\nArtista modificado correctamente.\n");
     }
 
 }
@@ -233,4 +233,34 @@ int borrarArtista(stArtista artistas[], int validos, int id){
         printf("\nArtista eliminado correctamente.\n");
 
     return validos;
+}
+
+//===============================================================================================================/ARCHIVO/
+
+void guardarArtista(FILE *archi, stArtista artista){
+
+    fprintf(archi, "\nID del Artista: %i", artista.id);
+    fprintf(archi, "\nNombre del Artista: %s", artista.nombre);
+    fprintf(archi, "\nGenero del Artista: %s\n", artista.genero);
+}
+
+void exportarArtistasTXT(stArtista artistas[], int validos){
+
+    FILE *archi = fopen("artistas.txt", "w");
+
+    if(archi == NULL)
+    {
+        printf("\nError al crear archivo.");
+        return;
+    }
+
+    for(int i = 0; i < validos; i++)
+    {
+        fprintf(archi, "\n=====================\n");
+        guardarArtista(archi, artistas[i]);
+    }
+
+    fclose(archi);
+
+    printf("\nArchivo exportado correctamente.\n");
 }

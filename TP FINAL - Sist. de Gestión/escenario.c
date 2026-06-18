@@ -224,3 +224,33 @@ int borrarEscenario(stEscenario escenarios[], int validos, int id){
 
     return validos;
 }
+
+//=====================================================================================================/ARCHIVO/
+
+void guardarEscenario(FILE *archi, stEscenario escenario){
+
+    fprintf(archi, "\nID del Escenario: %i", escenario.id);
+    fprintf(archi, "\nNombre del Escenario: %s\n", escenario.nombre);
+}
+
+void exportarEscenariosTXT(stEscenario escenarios[], int validos){
+
+    FILE *archi = fopen("escenarios.txt", "w");
+
+    if(archi == NULL)
+    {
+        printf("\nError al crear archivo.");
+        return;
+    }
+
+    for(int i = 0; i < validos; i++)
+    {
+        fprintf(archi, "\n=====================\n");
+        guardarEscenario(archi, escenarios[i]);
+    }
+
+    fclose(archi);
+
+    printf("\nArchivo exportado correctamente.\n");
+}
+

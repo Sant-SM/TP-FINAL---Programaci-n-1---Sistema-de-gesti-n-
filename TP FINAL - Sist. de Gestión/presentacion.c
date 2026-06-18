@@ -87,7 +87,7 @@ stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenar
 }
 
 
-//====================================================/CARGA PRESENTACIONES/         TENER EN CUENTA *SOLAPAMIENTO* (Sobre todo en HORARIO y ESCENARIO)
+//====================================================/CARGA PRESENTACIONES/ **nota: TENER EN CUENTA *SOLAPAMIENTO* (Sobre todo en HORARIO y ESCENARIO)
 
 void cargaPresentaciones (stPresentacion presentacion[], int * validosPRES, stArtista artista[], int validosARTS, stEscenario escenario[], int validosESC){
 
@@ -377,30 +377,30 @@ void modificarPresentacion (stPresentacion presentacion[], int validosP, stEscen
 
     if(pos == -1){
 
-    printf("\nPresentacion inexistente");
-    return;
+        printf("\nPresentacion inexistente");
+        return;
 
     }
 
-    printf("\nPresentacion encontrado.\n");
+        printf("\nPresentacion encontrado.\n");
 
-    stPresentacion aux = presentacion[pos];
+        stPresentacion aux = presentacion[pos];
 
         do{
 
-    printf("\nIngrese el nuevo ID del artista: ");
-    scanf ("%i", &auxIDartista);
+        printf("\nIngrese el nuevo ID del artista: ");
+        scanf ("%i", &auxIDartista);
 
-    if (existeArtista(artista, validosA, auxIDartista) == 1){
+            if (existeArtista(artista, validosA, auxIDartista) == 1){
 
-        aux.idArtista = auxIDartista;
+                aux.idArtista = auxIDartista;
 
-    }else{
+        }else{
 
-    printf("\nError, artista inexistente");
+        printf("\nError, artista inexistente");
 
-    }
-        }while (existeArtista(artista, validosA, auxIDartista) == 0);
+        }
+            }while (existeArtista(artista, validosA, auxIDartista) == 0);
 
 
         do{
@@ -550,4 +550,53 @@ int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres)
 
         return validosP;
 
+}
+
+//============================================================================================================/ARCHIVO/
+
+void guardarPresentacion(FILE *archi, stPresentacion p)
+{
+    stHorario fin = calcularFin(p.horaInicio, p.duracion);
+
+    fprintf(archi, "\nID de Presentacion: %d", p.id);
+
+    fprintf(archi, "\nID del Artista: %d", p.idArtista);
+
+    fprintf(archi, "\nID del Escenario: %d", p.idEscenario);
+
+    fprintf(archi,
+            "\nHorario Inicio: %02d:%02d",
+            p.horaInicio.horas,
+            p.horaInicio.minutos);
+
+    fprintf(archi,
+            "\nDuracion: %02d:%02d",
+            p.duracion.horas,
+            p.duracion.minutos);
+
+    fprintf(archi,
+            "\nHorario Fin: %02d:%02d\n",
+            fin.horas,
+            fin.minutos);
+}
+
+void exportarPresentacionesTXT(stPresentacion presentaciones[], int validos)
+{
+    FILE *archi = fopen("presentaciones.txt", "w");
+
+    if(archi == NULL)
+    {
+        printf("\nError al crear archivo.");
+        return;
+    }
+
+    for(int i = 0; i < validos; i++)
+    {
+        fprintf(archi, "\n=====================\n");
+        guardarPresentacion(archi, presentaciones[i]);
+    }
+
+    fclose(archi);
+
+    printf("\nArchivo exportado correctamente.\n");
 }

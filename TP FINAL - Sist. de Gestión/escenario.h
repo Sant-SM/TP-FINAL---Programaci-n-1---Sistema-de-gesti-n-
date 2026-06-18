@@ -36,4 +36,9 @@ void modificarEscenario (stEscenario escenario[], int validos);
 
 int borrarEscenario(stEscenario escenarios[], int validos, int id);
 
+//============================================================================================================/ARCHIVO/
+
+void guardarEscenario(FILE *archi, stEscenario escenario);
+void exportarEscenariosTXT(stEscenario escenarios[], int validos);
+
 #endif // ESCENARIO_H_INCLUDED

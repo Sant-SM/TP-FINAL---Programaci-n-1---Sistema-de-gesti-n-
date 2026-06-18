@@ -55,4 +55,9 @@ int borrarPresentacionXartista (stPresentacion presentaciones[], int validosP, i
 int borrarPresentacionXescenario (stPresentacion presentaciones[], int validosP, int idEsc);
 int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres);
 
+//============================================================================================================/ARCHIVO/
+
+void guardarPresentacion(FILE *archi, stPresentacion presentacion);
+void exportarPresentacionesTXT(stPresentacion presentaciones[], int validos);
+
 #endif // PRESENTACION_H_INCLUDED
