@@ -4,6 +4,7 @@
 #include "escenario.h"
 #include "constantes.h"
 #include "utilidades.h"
+#include "pila.h"
 
 stEscenario pedirEscenario(){
 
@@ -202,7 +203,7 @@ void modificarEscenario (stEscenario escenario[], int validos){
 
 //===============================================================================================================/borrar/
 
-int borrarEscenario(stEscenario escenarios[], int validos, int id){
+int borrarEscenario(stEscenario escenarios[], int validos, int id, Pila *historial){
 
         int pos = buscarXescenario(escenarios, validos, id);
 
@@ -212,6 +213,8 @@ int borrarEscenario(stEscenario escenarios[], int validos, int id){
             return validos;
 
         }
+
+        apilar(historial, id);
 
         for (int i = pos; i < validos - 1; i++){
 
@@ -237,20 +240,36 @@ void exportarEscenariosTXT(stEscenario escenarios[], int validos){
 
     FILE *archi = fopen("escenarios.txt", "w");
 
-    if(archi == NULL)
-    {
-        printf("\nError al crear archivo.");
-        return;
-    }
+        if(archi == NULL){
 
-    for(int i = 0; i < validos; i++)
-    {
-        fprintf(archi, "\n=====================\n");
-        guardarEscenario(archi, escenarios[i]);
-    }
+            printf("\nError al crear archivo.");
+            return;
+        }
+
+    stEscenario *aux = malloc(validos * sizeof(stEscenario));
+
+        if(aux == NULL){
+
+            printf("\nError al reservar memoria.");
+            fclose(archi);
+            return;
+        }
+
+        for(int i = 0; i < validos; i++){
+
+            aux[i] = escenarios[i];
+        }
+
+        for(int i = 0; i < validos; i++){
+
+            fprintf(archi, "\n=====================");
+            guardarEscenario(archi, aux[i]);
+        }
+
+    free(aux);
 
     fclose(archi);
 
-    printf("\nArchivo exportado correctamente.\n");
+    printf("\nArchivo exportado correctamente.");
 }
 

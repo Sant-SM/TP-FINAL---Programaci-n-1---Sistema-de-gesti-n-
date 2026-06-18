@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1781743017 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
+1781744716 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -9,6 +9,7 @@
 	"tiempo.h"
 	"constantes.h"
 	"utilidades.h"
+	"pila.h"
 
 1781181053 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pedirartistas.c
 	<stdio.h>
@@ -18,22 +19,24 @@
 
 1781181526 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pedirartistas.h
 
-1781743062 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.h
+1781744371 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.h
+	"pila.h"
 
-1781743062 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.h
+1781744546 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.h
 	"tiempo.h"
 	"artistas.h"
 	"escenario.h"
 
 1781732263 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.h
 
-1781742882 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
+1781745752 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\escenario.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"escenario.h"
 	"constantes.h"
 	"utilidades.h"
+	"pila.h"
 
 1781732349 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\tiempo.c
 	<stdio.h>
@@ -43,9 +46,10 @@
 	"constantes.h"
 	"utilidades.h"
 
-1781742703 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
+1781744263 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.h
+	"pila.h"
 
-1781743062 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
+1781744565 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\presentacion.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -55,14 +59,16 @@
 	"tiempo.h"
 	"constantes.h"
 	"utilidades.h"
+	"pila.h"
 
-1781742722 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
+1781745653 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\artistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"artistas.h"
 	"constantes.h"
 	"utilidades.h"
+	"pila.h"
 
 1781279951 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\constantes.h
 
@@ -73,4 +79,10 @@
 	<stdlib.h>
 	<string.h>
 	"utilidades.h"
+
+1774525366 source:c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pila.c
+	<stdio.h>
+	"pila.h"
+
+1774525368 c:\users\usuario\desktop\utn archivos\programacion\programacion 5 p1\proyectos\tp-final---programaci-n-1---sistema-de-gesti-n-\tp final - sist. de gestión\pila.h
 

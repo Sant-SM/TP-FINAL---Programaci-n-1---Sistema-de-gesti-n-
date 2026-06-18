@@ -7,6 +7,7 @@
 #include "tiempo.h"
 #include "constantes.h"
 #include "utilidades.h"
+#include "pila.h"
 
 stPresentacion pedirPresentacion(stArtista artista[], int validosARTS, stEscenario escenario[], int validosESC){
 
@@ -529,7 +530,7 @@ int borrarPresentacionXescenario (stPresentacion presentaciones[], int validosP,
 
 }
 
-int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres){
+int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres, Pila *historial){
 
     int pos = buscarXpresentacion(presentacion, validosP, idPres);
 
@@ -538,6 +539,8 @@ int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres)
             printf("\nPresentacion inexistente.\n");
             return validosP;
         }
+
+        apilar(historial, idPres);
 
         for(int i = pos; i < validosP - 1; i++){
 
@@ -582,21 +585,37 @@ void guardarPresentacion(FILE *archi, stPresentacion p)
 
 void exportarPresentacionesTXT(stPresentacion presentaciones[], int validos)
 {
-    FILE *archi = fopen("presentaciones.txt", "w");
+     FILE *archi = fopen("presentaciones.txt", "w");
 
-    if(archi == NULL)
-    {
-        printf("\nError al crear archivo.");
-        return;
-    }
+        if(archi == NULL){
 
-    for(int i = 0; i < validos; i++)
-    {
-        fprintf(archi, "\n=====================\n");
-        guardarPresentacion(archi, presentaciones[i]);
-    }
+            printf("\nError al crear archivo.");
+            return;
+        }
+
+    stPresentacion *aux = malloc(validos * sizeof(stPresentacion));
+
+        if(aux == NULL){
+
+            printf("\nError al reservar memoria.");
+            fclose(archi);
+            return;
+        }
+
+        for(int i = 0; i < validos; i++){
+
+            aux[i] = presentaciones[i];
+        }
+
+        for(int i = 0; i < validos; i++){
+
+            fprintf(archi, "\n=====================");
+            guardarPresentacion(archi, aux[i]);
+        }
+
+    free(aux);
 
     fclose(archi);
 
-    printf("\nArchivo exportado correctamente.\n");
+    printf("\nArchivo exportado correctamente.");
 }

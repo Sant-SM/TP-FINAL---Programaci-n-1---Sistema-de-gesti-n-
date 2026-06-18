@@ -1,6 +1,8 @@
 #ifndef ESCENARIO_H_INCLUDED
 #define ESCENARIO_H_INCLUDED
 
+#include "pila.h"
+
 typedef struct{
 
 int id;
@@ -34,7 +36,7 @@ void modificarEscenario (stEscenario escenario[], int validos);
 
 //===============================================================================================================/borrar/
 
-int borrarEscenario(stEscenario escenarios[], int validos, int id);
+int borrarEscenario(stEscenario escenarios[], int validos, int id, Pila *historial);
 
 //============================================================================================================/ARCHIVO/
 

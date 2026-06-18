@@ -4,6 +4,7 @@
 #include "artistas.h"
 #include "constantes.h"
 #include "utilidades.h"
+#include "pila.h"
 
 stArtista pedirArtistas (){
 
@@ -212,7 +213,7 @@ void modificarArtista (stArtista artista[], int validos){
 
 //===============================================================================================================/borrar/
 
-int borrarArtista(stArtista artistas[], int validos, int id){
+int borrarArtista(stArtista artistas[], int validos, int id, Pila *historial){
 
         int pos = buscarXartista(artistas, validos, id);
 
@@ -222,6 +223,8 @@ int borrarArtista(stArtista artistas[], int validos, int id){
             return validos;
 
         }
+
+        apilar(historial, id);
 
         for (int i = pos; i < validos - 1; i++){
 
@@ -248,19 +251,35 @@ void exportarArtistasTXT(stArtista artistas[], int validos){
 
     FILE *archi = fopen("artistas.txt", "w");
 
-    if(archi == NULL)
-    {
-        printf("\nError al crear archivo.");
-        return;
+        if(archi == NULL){
+
+            printf("\nError al crear archivo.");
+            return;
+        }
+
+    stArtista *aux = malloc(validos * sizeof(stArtista));
+
+        if(aux == NULL){
+
+            printf("\nError al reservar memoria.");
+            fclose(archi);
+            return;
+        }
+
+    for(int i = 0; i < validos; i++){
+
+        aux[i] = artistas[i];
     }
 
-    for(int i = 0; i < validos; i++)
-    {
-        fprintf(archi, "\n=====================\n");
-        guardarArtista(archi, artistas[i]);
+    for(int i = 0; i < validos; i++){
+
+        fprintf(archi, "\n=====================");
+        guardarArtista(archi, aux[i]);
     }
+
+    free(aux);
 
     fclose(archi);
 
-    printf("\nArchivo exportado correctamente.\n");
+    printf("\nArchivo exportado correctamente.");
 }

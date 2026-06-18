@@ -7,6 +7,7 @@
 #include "tiempo.h"
 #include "constantes.h"
 #include "utilidades.h"
+#include "pila.h"
 
 //nombre[strcspn(nombre, "\n")] = '\0';                   BORRA SALTO DE LINEA
 
@@ -15,17 +16,26 @@
 int main()
 {
 
-    stArtista artistas [MAX_ARTISTAS];                  ///PREGUNTAR EN CLASE: Debo verificar el si el nombre estaba ingresado? O basta con los datos?
+    stArtista *artistas;
     int validosARTISTAS = 0;
 
-    stEscenario escenarios [MAX_ESCENARIOS];
+    stEscenario *escenarios;
     int validosESCENARIOS = 0;
 
-    stPresentacion presentaciones [MAX_PRESENTACIONES];
+    stPresentacion *presentaciones;
     int validosPRESENTACIONES = 0;
+
+    artistas = malloc(MAX_ARTISTAS * sizeof(stArtista));
+
+    escenarios = malloc(MAX_ESCENARIOS * sizeof(stEscenario));
+
+    presentaciones = malloc(MAX_PRESENTACIONES * sizeof(stPresentacion));
 
     int opcion;
     int subOpcion;
+
+    Pila historialBajas;
+    inicpila(&historialBajas);
 
 do{
 
@@ -39,6 +49,7 @@ do{
     printf("\n4- Listar");
     printf("\n5- Listados Filtrados");
     printf("\n6- Exportar a TXT");
+    printf ("\n7- Mostrar historial de Bajas");
     printf("\n0- Salir");
 
     printf("\n\nIngrese una opcion: ");
@@ -157,7 +168,7 @@ do{
                              if(opcionA == 's' || opcionA == 'S'){
 
                                 validosPRESENTACIONES = borrarPresentacionXartista(presentaciones, validosPRESENTACIONES, idA);
-                                validosARTISTAS = borrarArtista(artistas, validosARTISTAS, idA);
+                                validosARTISTAS = borrarArtista(artistas, validosARTISTAS, idA, &historialBajas);
 
                                 }
                                 else{
@@ -166,7 +177,7 @@ do{
                                 }
                             }else {
 
-                                validosARTISTAS = borrarArtista(artistas, validosARTISTAS, idA);
+                                validosARTISTAS = borrarArtista(artistas, validosARTISTAS, idA, &historialBajas);
 
                             }
 
@@ -201,7 +212,7 @@ do{
                              if(opcionE == 's' || opcionE == 'S'){
 
                                 validosPRESENTACIONES = borrarPresentacionXescenario(presentaciones, validosPRESENTACIONES, idE);
-                                validosESCENARIOS = borrarEscenario(escenarios, validosESCENARIOS, idE);
+                                validosESCENARIOS = borrarEscenario(escenarios, validosESCENARIOS, idE, &historialBajas);
 
                                 }
                                 else{
@@ -210,7 +221,7 @@ do{
                                 }
                             }else {
 
-                                validosESCENARIOS = borrarEscenario(escenarios, validosESCENARIOS, idE);
+                                validosESCENARIOS = borrarEscenario(escenarios, validosESCENARIOS, idE, &historialBajas);
 
                             }
 
@@ -225,7 +236,7 @@ do{
                     printf("\nIngrese ID de la presentacion: ");
                     idP = pedirEntero();
 
-                        validosPRESENTACIONES = borrarPresentacion(presentaciones, validosPRESENTACIONES, idP);
+                        validosPRESENTACIONES = borrarPresentacion(presentaciones, validosPRESENTACIONES, idP, &historialBajas);
 
                     break;
 
@@ -299,13 +310,22 @@ do{
 
             break;
 
-            case 6:
+            //===========================================/EXPORTAR A TXT/
+
+                case 6:
 
             exportarArtistasTXT(artistas, validosARTISTAS);
             exportarEscenariosTXT(escenarios, validosESCENARIOS);
             exportarPresentacionesTXT(presentaciones, validosPRESENTACIONES);
 
             printf("\nTodos los archivos fueron exportados.\n");
+            break;
+
+            //===========================================/MOSTRAR PILA/
+
+            case 7:
+
+            mostrar(&historialBajas);
             break;
 
         //========================================================/SALIR/
@@ -321,6 +341,10 @@ do{
     }
 
 }while(opcion != 0);
+
+        free(artistas);
+        free(escenarios);
+        free(presentaciones);
 
 
     return 0;

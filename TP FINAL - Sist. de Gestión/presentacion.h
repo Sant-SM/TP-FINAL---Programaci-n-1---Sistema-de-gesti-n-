@@ -53,7 +53,7 @@ int contarPresentacionesXescenario(stPresentacion presentacion[], int validosP, 
 
 int borrarPresentacionXartista (stPresentacion presentaciones[], int validosP, int idArt);
 int borrarPresentacionXescenario (stPresentacion presentaciones[], int validosP, int idEsc);
-int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres);
+int borrarPresentacion (stPresentacion presentacion[], int validosP, int idPres, Pila *historial);
 
 //============================================================================================================/ARCHIVO/
 

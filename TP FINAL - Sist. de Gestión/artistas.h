@@ -1,6 +1,8 @@
 #ifndef ARTISTAS_H_INCLUDED
 #define ARTISTAS_H_INCLUDED
 
+#include "pila.h"
+
 typedef struct{
 
 int id;
@@ -34,7 +36,7 @@ void modificarArtista (stArtista artista[], int validos);
 
 //===============================================================================================================/borrar/
 
-int borrarArtista(stArtista artistas[], int validos, int id);
+int borrarArtista(stArtista artistas[], int validos, int id, Pila *historial);
 
 //============================================================================================================/ARCHIVO/
 
